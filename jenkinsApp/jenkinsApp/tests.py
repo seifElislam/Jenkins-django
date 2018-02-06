@@ -1,5 +1,5 @@
 from django.test import TestCase, Client
-from django.core.urlresolvers import resolve, reverse
+from django.core.urlresolvers import reverse
 
 
 class HomePageTest(TestCase):
@@ -11,5 +11,5 @@ class HomePageTest(TestCase):
         url = reverse('index')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, './index.html')
+        self.assertTemplateUsed(response, 'index.html')
         self.assertContains(response, 'Hello')
