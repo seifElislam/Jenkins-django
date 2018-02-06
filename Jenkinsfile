@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'pip install -r requirments.txt',
+                sh 'pip install -r requirments.txt'
                 sh 'python jenkinsApp/manage.py test tests '
             }
         }
