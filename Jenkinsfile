@@ -7,8 +7,10 @@ pipeline {
                     image 'python:2-alpine'
                 }
             }
-            sh 'pip install -r requirments.txt',
-            sh 'python jenkinsApp/manage.py test tests'
+            steps {
+                sh 'pip install -r requirments.txt',
+                sh 'python jenkinsApp/manage.py test tests '
+            }
         }
     }
 }
